@@ -20,8 +20,8 @@ public class Component {
 
 	public boolean AffichageFenetre = false;
 	public static String title = "Baptiste Dixneuf Jeu 2D";
-	public static int largeur=720;
-	public static int hauteur=480;
+	public static int largeur=1024;
+	public static int hauteur=640;
 	public Jeu jeu;
 
 

@@ -11,7 +11,9 @@ import org.lwjgl.opengl.GL11;
 
 
 
+
 import fr.baptistedixneuf.main.game.Jeu;
+
 
 
 
@@ -62,6 +64,7 @@ public class Component {
 	private void rendre(){
 
 		jeu.rendre();
+		
 
 	}
 

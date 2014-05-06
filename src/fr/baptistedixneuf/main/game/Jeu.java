@@ -1,12 +1,23 @@
 package fr.baptistedixneuf.main.game;
 
+import java.awt.Font;
 import org.lwjgl.opengl.GL11;
+import org.newdawn.slick.Color;
+import org.newdawn.slick.TrueTypeFont;
+
+
 
 
 public class Jeu {
 	public  Tuile sprite;
 	public 	Image image;
 	public int[] rgbs;
+	public Boutton boutton;
+	
+	private TrueTypeFont font;
+	
+	/** Boolean flag on whether AntiAliasing is enabled or not */
+	private boolean antiAlias = true;
 
 	public Jeu(){
 		String cheminImage= "res/spritesheet.png";	
@@ -16,7 +27,13 @@ public class Jeu {
 		image=new Image("res/level_metal.png");
 		rgbs= new int[image.largeur*image.hauteur];
 		rgbs=image.rgbs;
+		boutton =  new Boutton();
+		boutton.addButton(300, 200, "res/boutton.png");
 		
+		
+		// load a default java font
+		Font awtFont = new Font("Times New Roman", Font.BOLD, 24);
+		font = new TrueTypeFont(awtFont, antiAlias);
 		
 	}
 
@@ -40,6 +57,10 @@ public class Jeu {
 				sprite.rendre(8, 7,x,y,32);
 			}
 		}
+		
+		boutton.Draw();
+		font.drawString(200, 50, "Baptiste Dixneuf - jeu 2d", Color.yellow);	
+		
 		
 		
 
